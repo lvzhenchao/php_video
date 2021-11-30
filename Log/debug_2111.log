@@ -1,0 +1,1 @@
+21-11-30 09:22:20:Error at file[Unknown] line[0] message:[Swoole\Event::rshutdown(): Event::wait() in shutdown function is deprecated]
