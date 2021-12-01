@@ -4,8 +4,9 @@ namespace App\HttpController\Api;
 
 class Index extends Base
 {
-    
+
     public function video() {
+//        new ab();
         $data = [
             'id' =>1,
             'name'=>"imooc",
