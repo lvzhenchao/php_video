@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '30a2f9d611d2970a2b1d51dcf6fbb46e86fb96c5',
+        'reference' => 'a1b48cd8d8e449320b8cc81ffa05519803a57edc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '30a2f9d611d2970a2b1d51dcf6fbb46e86fb96c5',
+            'reference' => 'a1b48cd8d8e449320b8cc81ffa05519803a57edc',
             'dev_requirement' => false,
         ),
         'doctrine/lexer' => array(
@@ -170,6 +170,17 @@
             'install_path' => __DIR__ . '/../jeremeamia/superclosure',
             'aliases' => array(),
             'reference' => '5707d5821b30b9a07acfb4d76949784aaa0e9ce9',
+            'dev_requirement' => false,
+        ),
+        'joshcam/mysqli-database-class' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../joshcam/mysqli-database-class',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '16564ba0717fad64617a1ce4a8d3f9b90e68c7c2',
             'dev_requirement' => false,
         ),
         'nikic/fast-route' => array(

@@ -3,7 +3,8 @@
         "easyswoole/easyswoole": "2.x-dev",
         "easyswoole/swoole-ide-helper": "^1.3",
         "easyswoole/http-annotation": "^2.2",
-        "easyswoole/mysqli": "^2.2"
+        "easyswoole/mysqli": "^2.2",
+        "joshcam/mysqli-database-class": "dev-master"
     },
     "autoload": {
         "psr-4": {

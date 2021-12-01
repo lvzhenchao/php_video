@@ -13,6 +13,7 @@ use \EasySwoole\Core\Swoole\ServerManager;
 use \EasySwoole\Core\Swoole\EventRegister;
 use \EasySwoole\Core\Http\Request;
 use \EasySwoole\Core\Http\Response;
+use \EasySwoole\Core\Component\Di;
 
 Class EasySwooleEvent implements EventInterface {
 
@@ -25,6 +26,14 @@ Class EasySwooleEvent implements EventInterface {
     public static function mainServerCreate(ServerManager $server,EventRegister $register): void
     {
         // TODO: Implement mainServerCreate() method.
+        Di::getInstance()->set('MYSQL',\MysqliDb::class,Array (
+                'host' => '192.168.33.10',
+                'username' => 'root',
+                'password' => 'BspKCZLRZWeHeaTR',
+                'db'=> 'imooc_video',
+                'port' => 3306,
+                'charset' => 'utf8')
+        );
     }
 
     public static function onRequest(Request $request,Response $response): void
