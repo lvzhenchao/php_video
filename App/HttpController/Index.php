@@ -7,7 +7,7 @@ class Index extends Controller
 {
     function index()
     {
-        $this->response()->write('singwa index');
+        $this->response()->write('I am index');
     }
 
 }
