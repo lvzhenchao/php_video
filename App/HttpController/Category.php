@@ -7,7 +7,7 @@ class Category extends Controller
 {
     function index()
     {
-        $this->response()->write('singwa hello');
+        $this->response()->write('I am category');
     }
 
 }
