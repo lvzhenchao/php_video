@@ -2,19 +2,9 @@
 
 namespace App\HttpController\Api;
 
-use EasySwoole\Core\Http\AbstractInterface\Controller;
-class Index extends Controller
+class Index extends Base
 {
-    function index()
-    {
-//        $data = [
-//            'id' =>1,
-//            'name'=>"imooc"
-//        ];
-//        return $this->writeJson(200,'ok', $data);
-//        $this->response()->write('I am category');
-    }
-
+    
     public function video() {
         $data = [
             'id' =>1,
