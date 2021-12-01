@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5ad1aca556fbdf79670452a37cc3e02",
+    "content-hash": "ba0708506d2a6b25dfe4733f7689b50c",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -600,6 +600,64 @@
                 "source": "https://github.com/easy-swoole/http-annotation/tree/2.2.1"
             },
             "time": "2021-07-06T08:06:24+00:00"
+        },
+        {
+            "name": "easyswoole/mysqli",
+            "version": "2.2.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/mysqli.git",
+                "reference": "9c4aac7c111c0dc073b53a40006606e44c11079c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-swoole/mysqli/zipball/9c4aac7c111c0dc073b53a40006606e44c11079c",
+                "reference": "9c4aac7c111c0dc073b53a40006606e44c11079c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "easyswoole/spl": "^1.2"
+            },
+            "require-dev": {
+                "easyswoole/phpunit": "^1.0",
+                "easyswoole/swoole-ide-helper": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EasySwoole\\Mysqli\\": "src/",
+                    "EasySwoole\\Mysqli\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "YF",
+                    "email": "291323003@qq.com"
+                }
+            ],
+            "description": "An efficient swoole framework",
+            "homepage": "https://www.easyswoole.com/",
+            "keywords": [
+                "async",
+                "easyswoole",
+                "framework",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/easy-swoole/mysqli/issues",
+                "source": "https://github.com/easy-swoole/mysqli/tree/2.2.11"
+            },
+            "time": "2021-09-22T06:40:09+00:00"
         },
         {
             "name": "easyswoole/parsedown",

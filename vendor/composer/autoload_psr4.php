@@ -17,6 +17,8 @@ return array(
     'EasySwoole\\Session\\Test\\' => array($vendorDir . '/easyswoole/session/tests'),
     'EasySwoole\\Session\\' => array($vendorDir . '/easyswoole/session/src'),
     'EasySwoole\\ParserDown\\' => array($vendorDir . '/easyswoole/parsedown/src'),
+    'EasySwoole\\Mysqli\\Tests\\' => array($vendorDir . '/easyswoole/mysqli/tests'),
+    'EasySwoole\\Mysqli\\' => array($vendorDir . '/easyswoole/mysqli/src'),
     'EasySwoole\\Http\\Tests\\' => array($vendorDir . '/easyswoole/http/tests'),
     'EasySwoole\\Http\\' => array($vendorDir . '/easyswoole/http/src'),
     'EasySwoole\\HttpAnnotation\\' => array($vendorDir . '/easyswoole/http-annotation/src'),

@@ -623,6 +623,67 @@
             "install-path": "../easyswoole/http-annotation"
         },
         {
+            "name": "easyswoole/mysqli",
+            "version": "2.2.11",
+            "version_normalized": "2.2.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/mysqli.git",
+                "reference": "9c4aac7c111c0dc073b53a40006606e44c11079c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-swoole/mysqli/zipball/9c4aac7c111c0dc073b53a40006606e44c11079c",
+                "reference": "9c4aac7c111c0dc073b53a40006606e44c11079c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "easyswoole/spl": "^1.2"
+            },
+            "require-dev": {
+                "easyswoole/phpunit": "^1.0",
+                "easyswoole/swoole-ide-helper": "^1.2"
+            },
+            "time": "2021-09-22T06:40:09+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "EasySwoole\\Mysqli\\": "src/",
+                    "EasySwoole\\Mysqli\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "YF",
+                    "email": "291323003@qq.com"
+                }
+            ],
+            "description": "An efficient swoole framework",
+            "homepage": "https://www.easyswoole.com/",
+            "keywords": [
+                "async",
+                "easyswoole",
+                "framework",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/easy-swoole/mysqli/issues",
+                "source": "https://github.com/easy-swoole/mysqli/tree/2.2.11"
+            },
+            "install-path": "../easyswoole/mysqli"
+        },
+        {
             "name": "easyswoole/parsedown",
             "version": "1.0.2",
             "version_normalized": "1.0.2.0",

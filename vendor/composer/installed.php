@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '465089a71238343ae919e44c776fe3ceb2c85b1e',
+        'reference' => '30a2f9d611d2970a2b1d51dcf6fbb46e86fb96c5',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '465089a71238343ae919e44c776fe3ceb2c85b1e',
+            'reference' => '30a2f9d611d2970a2b1d51dcf6fbb46e86fb96c5',
             'dev_requirement' => false,
         ),
         'doctrine/lexer' => array(
@@ -98,6 +98,15 @@
             'install_path' => __DIR__ . '/../easyswoole/http-annotation',
             'aliases' => array(),
             'reference' => '62a60688a1629e4e67753177b4971e777d2cf50a',
+            'dev_requirement' => false,
+        ),
+        'easyswoole/mysqli' => array(
+            'pretty_version' => '2.2.11',
+            'version' => '2.2.11.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../easyswoole/mysqli',
+            'aliases' => array(),
+            'reference' => '9c4aac7c111c0dc073b53a40006606e44c11079c',
             'dev_requirement' => false,
         ),
         'easyswoole/parsedown' => array(
