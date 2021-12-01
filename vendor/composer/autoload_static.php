@@ -17,6 +17,7 @@ class ComposerStaticInit08b4ceb148a1c050a33014cc55dcc98f
         ),
         'P' => 
         array (
+            'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
         ),
         'F' => 
@@ -25,7 +26,27 @@ class ComposerStaticInit08b4ceb148a1c050a33014cc55dcc98f
         ),
         'E' => 
         array (
+            'EasySwoole\\Validate\\' => 20,
+            'EasySwoole\\Utility\\' => 19,
+            'EasySwoole\\Spl\\Test\\' => 20,
+            'EasySwoole\\Spl\\' => 15,
+            'EasySwoole\\Session\\Test\\' => 24,
+            'EasySwoole\\Session\\' => 19,
+            'EasySwoole\\ParserDown\\' => 22,
+            'EasySwoole\\Http\\Tests\\' => 22,
+            'EasySwoole\\Http\\' => 16,
+            'EasySwoole\\HttpAnnotation\\' => 26,
+            'EasySwoole\\DoctrineAnnotation\\Tests\\' => 36,
+            'EasySwoole\\DoctrineAnnotation\\' => 30,
+            'EasySwoole\\Component\\Tests\\' => 27,
+            'EasySwoole\\Component\\' => 21,
+            'EasySwoole\\Command\\' => 19,
+            'EasySwoole\\Annotation\\' => 22,
             'EasySwoole\\' => 11,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
         ),
         'C' => 
         array (
@@ -42,6 +63,10 @@ class ComposerStaticInit08b4ceb148a1c050a33014cc55dcc98f
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/superclosure/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -50,9 +75,77 @@ class ComposerStaticInit08b4ceb148a1c050a33014cc55dcc98f
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'EasySwoole\\Validate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/validate/src',
+        ),
+        'EasySwoole\\Utility\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/utility/src',
+        ),
+        'EasySwoole\\Spl\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/spl/test',
+        ),
+        'EasySwoole\\Spl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/spl/src',
+        ),
+        'EasySwoole\\Session\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/session/tests',
+        ),
+        'EasySwoole\\Session\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/session/src',
+        ),
+        'EasySwoole\\ParserDown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/parsedown/src',
+        ),
+        'EasySwoole\\Http\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/http/tests',
+        ),
+        'EasySwoole\\Http\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/http/src',
+        ),
+        'EasySwoole\\HttpAnnotation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/http-annotation/src',
+        ),
+        'EasySwoole\\DoctrineAnnotation\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/doctrine-annotations/tests',
+        ),
+        'EasySwoole\\DoctrineAnnotation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/doctrine-annotations/src',
+        ),
+        'EasySwoole\\Component\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/component/Tests',
+        ),
+        'EasySwoole\\Component\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/component/src',
+        ),
+        'EasySwoole\\Command\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/command/src',
+        ),
+        'EasySwoole\\Annotation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/annotation/src',
+        ),
         'EasySwoole\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/easyswoole/src',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
         'Cron\\' => 
         array (
