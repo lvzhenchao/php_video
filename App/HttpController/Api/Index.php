@@ -2,7 +2,7 @@
 
 namespace App\HttpController\Api;
 
-use EasySwoole\Core\Component\Di;
+use \EasySwoole\Core\Component\Di;
 
 class Index extends Base
 {
