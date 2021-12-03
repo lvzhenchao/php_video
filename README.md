@@ -10,5 +10,5 @@ composer dump-autoload
 # 压力测试工具
 yum -y install httpd-tools
 ab -n 1000 -c 100 https://baidu.com/
-top
+top命令查看资源
 
