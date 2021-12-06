@@ -53,4 +53,10 @@ class Index extends Base
         return $this->writeJson(200,'ok', $result);
     }
 
+    //需要先安装扩展
+    public function yaconf() {
+        $result = \Yaconf::get('redis');
+        return $this->writeJson(200,'ok', $result);
+    }
+
 }
