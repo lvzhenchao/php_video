@@ -2,6 +2,7 @@
 
 namespace App\HttpController\Api;
 
+use App\lib\Redis\Redis;
 use \EasySwoole\Core\Component\Di;
 
 class Index extends Base
@@ -35,6 +36,15 @@ class Index extends Base
         //所有数据
 //        $result = $db->get("video");
         $result = $db->get("video", 2);//limit
+        return $this->writeJson(200,'ok', $result);
+    }
+
+    public function getRedis() {
+//        $redis = new \Redis();
+//        $redis->connect("192.168.33.10",6379, 5);
+//        $redis->set("singws", 90);
+
+        $result = Redis::getInstance()->get("singws");
         return $this->writeJson(200,'ok', $result);
     }
 

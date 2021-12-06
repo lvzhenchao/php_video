@@ -12,3 +12,6 @@ yum -y install httpd-tools
 ab -n 1000 -c 100 https://baidu.com/
 top命令查看资源
 
+#消息队列
+生产者--> Broker[消息处理中心：存储...] --> 消费者
+
