@@ -2,6 +2,7 @@
 
 namespace App\lib\Redis;
 
+use EasySwoole\Config;
 use EasySwoole\Core\AbstractInterface\Singleton;
 
 class Redis{
@@ -15,8 +16,12 @@ class Redis{
         }
 
         try {
+//            $redisConfig = Config::getInstance()->getConf("REDIS");//读取
+            $redisConfig = Config::getInstance()->getConf("redis");//读取自定义文件redis
+//            var_dump($redisConfig);
+
             $this->redis = new \Redis();
-            $result = $this->redis->connect("192.168.33.10",6379, 5);
+            $result = $this->redis->connect($redisConfig['host'],$redisConfig['port'], $redisConfig['time_out']);
         } catch (\Exception $e){
             throw new \Exception("redis服务异常");
         }

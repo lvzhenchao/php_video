@@ -40,11 +40,16 @@ class Index extends Base
     }
 
     public function getRedis() {
+        //第一种
 //        $redis = new \Redis();
 //        $redis->connect("192.168.33.10",6379, 5);
 //        $redis->set("singws", 90);
 
-        $result = Redis::getInstance()->get("singws");
+        //第二种
+//        $result = Redis::getInstance()->get("singws");
+
+        //第三种注入方式
+        $result = Di::getInstance()->get("REDIS")->get("singws");
         return $this->writeJson(200,'ok', $result);
     }
 

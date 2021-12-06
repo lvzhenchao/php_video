@@ -38,5 +38,12 @@ return [
         'nodeTimeout'=>10,
         'nodeName'=>'easySwoole',
         'nodeId'=>null
-    ]
+    ],
+
+    //先不管掉
+//    'REDIS' => [
+//        'host' => '192.168.33.10',
+//        'port' => 6379,
+//        'time_out' => 3,
+//    ],
 ];
