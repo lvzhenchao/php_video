@@ -17,7 +17,8 @@ class Redis{
 
         try {
 //            $redisConfig = Config::getInstance()->getConf("REDIS");//读取
-            $redisConfig = Config::getInstance()->getConf("redis");//读取自定义文件redis
+//            $redisConfig = Config::getInstance()->getConf("redis");//读取自定义文件redis
+            $redisConfig = \Yaconf::get('redis');//使用yaconf读取自定义文件redis
 //            var_dump($redisConfig);
 
             $this->redis = new \Redis();
