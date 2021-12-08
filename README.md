@@ -28,7 +28,7 @@ cd yaconf
 ./configure --with-php-config=/www/server/php/74/bin/php-config
 - 编译
 make && make install
--写配置文件
+- 写配置文件
 echo "extension = yaconf.so" >> /www/server/php/74/etc/php.ini
 - 重启php
 - 检查
