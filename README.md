@@ -33,3 +33,15 @@ echo "extension = yaconf.so" >> /www/server/php/74/etc/php.ini
 - 重启php
 - 检查
 php -m
+
+# 添加前端vue页面
+# 添加前端vue的nginx转发
+` 
+index index.php index.html index.htm default.php default.htm default.html;
+root /home/mycode/php_video/webroot;
+    location / {
+        if (!-e $request_filename) {
+            proxy_pass http://127.0.0.1:9501;//如果访问的url不存在，则转发到后端
+        }
+    }
+`
