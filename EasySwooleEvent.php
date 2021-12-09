@@ -55,6 +55,7 @@ Class EasySwooleEvent implements EventInterface {
         //将redis注入
         Di::getInstance()->set('REDIS', Redis::getInstance());
 
+        //将生产者模型加入到新的进程内，并注入
         $allNum = 3;
         for ($i = 0 ;$i < $allNum;$i++){
             ProcessManager::getInstance()->addProcess("imooc_consumer_testp_{$i}",ConsumerTest::class);
