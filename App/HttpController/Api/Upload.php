@@ -2,6 +2,7 @@
 
 namespace App\HttpController\Api;
 
+use App\lib\Upload\Image;
 use App\lib\Upload\Video;
 
 class Upload extends Base
@@ -11,7 +12,8 @@ class Upload extends Base
         $request = $this->request();
 
         try {
-            $obj = new Video($request);
+//            $obj = new Video($request);
+            $obj = new Image($request);
             $file = $obj->upload();
         } catch (\Exception $e) {
             return $this->writeJson(400, $e->getMessage(), []);
