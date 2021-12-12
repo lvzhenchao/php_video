@@ -32,7 +32,7 @@ class Upload extends Base
         //第三种 php反射机制
         $classObj = new ClassArr();
         $classStats = $classObj->uploadClassStat();
-        $obj = $classObj->initClass($type, $classStats, [$request]);
+        $obj = $classObj->initClass($type, $classStats, [$request, $type]);
 
         try {
 //            $obj = new Video($request);
