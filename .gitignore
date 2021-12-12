@@ -5,3 +5,5 @@
 *.pid
 *.pid
 webroot/.htaccess
+*.png
+*.mp4
