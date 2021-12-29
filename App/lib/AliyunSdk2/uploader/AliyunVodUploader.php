@@ -11,7 +11,7 @@ use OSS\Core\OssUtil;
 class AliyunVodUploader
 {
 
-    public function __construct($accessKeyId, $accessKeySecret, $apiRegionId=null)
+    public function __construct($accessKeyId, $accessKeySecret, $apiRegionId="cn-beijing")
     {
         $this->accessKeyId = $accessKeyId;
         $this->accessKeySecret = $accessKeySecret;
