@@ -13,7 +13,7 @@ class AliVod {
     public $client;
     public function __construct($accessKeyId, $accessKeySecret) {
             // 根据点播接入服务所在的Region填写，例如：接入服务在上海，则填cn-shanghai
-        $profile = DefaultProfile::getProfile($this->regionId, \Yanconf::get("aliyun.accessKeyId"), \Yanconf::get("aliyun.accessKeySecret"));
+        $profile = \DefaultProfile::getProfile($this->regionId, \Yanconf::get("aliyun.accessKeyId"), \Yanconf::get("aliyun.accessKeySecret"));
         $this->client = new \DefaultAcsClient($profile);
     }
 
