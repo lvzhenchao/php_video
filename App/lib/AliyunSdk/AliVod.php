@@ -51,7 +51,7 @@ class AliVod {
 
 	public function initOssClient($uploadAuth, $uploadAddress) {
 		//$uploadAddress['Endpoint'] = "http://oss-cn-shanghai.aliyuncs.com";
-    $this->ossClient = new OssClient($uploadAuth['AccessKeyId'], $uploadAuth['AccessKeySecret'], $uploadAddress['Endpoint'], 
+        $this->ossClient = new OssClient($uploadAuth['AccessKeyId'], $uploadAuth['AccessKeySecret'], $uploadAddress['Endpoint'],
         false, $uploadAuth['SecurityToken']);
     	$this->ossClient->setTimeout(86400*7);    // 设置请求超时时间，单位秒，默认是5184000秒, 建议不要设置太小，如果上传文件很大，消耗的时间会比较长
     	$this->ossClient->setConnectTimeout(10);  // 设置连接超时时间，单位秒，默认是10秒
