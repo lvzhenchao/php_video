@@ -14,12 +14,18 @@ class AliVod {
 	public $client ;
 	public $ossClient;
 
+    /**
+     *
+     * 初始化
+     * AliVod constructor.
+     */
 	public function __construct() {
 	    $profile = \DefaultProfile::getProfile($this->regionId, \Yaconf::get("aliyun.accessKeyId"), \Yaconf::get("aliyun.accessKeySecret"));
 	    $this->client = new \DefaultAcsClient($profile);
 	}
 
 	/**
+     * 获取视频上传地址和凭证
 	 * [create_upload_video description]
 	 * @auth   singwa
 	 * @date   2018-10-29T07:58:49+0800
@@ -63,6 +69,7 @@ class AliVod {
 	}
 
 	/**
+     * 获取播放地址
 	 * [getPlayInfo description]
 	 * @auth   singwa
 	 * @date   2018-10-29T09:19:05+0800
