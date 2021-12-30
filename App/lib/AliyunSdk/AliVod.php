@@ -86,5 +86,27 @@ class AliVod {
 		$request->setAcceptFormat("JSON");
 
 		return $this->client->getAcsResponse($request);
+
+//        (
+//          [Status] => Normal
+//          [StreamType] => video
+//          [Size] => 568151
+//            [Definition] => OD
+//          [Fps] => 29.97002997003
+//            [Specification] => Original
+//          [ModificationTime] => 2021-12-30T05:46:11Z
+//          [Duration] => 3.4033
+//            [Bitrate] => 1335.52
+//            [Encrypt] => 0
+//            [PreprocessStatus] => UnPreprocess
+//          [Format] => mp4
+//          [NarrowBandType] => 0
+//            [PlayURL] => https://outin-261bdc9e671f11ecb53200163e038793.oss-cn-beijing.aliyuncs.com/sv/46d6f359-17e09dfd60d/46d6f359-17e09dfd60d.mp4?Expires=1640847712&OSSAccessKeyId=LTAI4FocoL6tuCdYhuvug6Ee&Signature=bLFSXvAzavGUA2%2FVsh2uE%2Fb1mE4%3D
+//            [CreationTime] => 2021-12-30T05:46:11Z
+//              [Height] => 960
+//            [Width] => 544
+//            [JobId] => 737b631aab5644138f52b07f5cba9de602
+//        )
+
 	}
 }
