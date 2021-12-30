@@ -10,7 +10,7 @@ use OSS\Core\OssException;
 class AliVod {
 
 
-	public $regionId = "cn-shanghai";
+	public $regionId = "cn-beijing";
 	public $client ;
 	public $ossClient;
 
