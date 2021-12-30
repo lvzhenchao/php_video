@@ -25,7 +25,10 @@ class AliVod2 {
             );
             $uploadVideoRequest->setUserData(json_encode($userData));
             $res = $uploader->uploadLocalVideo($uploadVideoRequest);
-            print_r($res);
+            return $res;
+//            echo "<pre>";
+//            print_r($res);
+//            echo "</pre>";
         } catch (Exception $e) {
             printf("testUploadLocalVideo Failed, ErrorMessage: %s\n Location: %s %s\n Trace: %s\n",
                 $e->getMessage(), $e->getFile(), $e->getLine(), $e->getTraceAsString());
