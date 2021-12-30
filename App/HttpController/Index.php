@@ -29,7 +29,6 @@ class Index extends Controller
         $obj->initOssClient($uploadAuth, $uploadAddress);
 
         $videoFile = "/home/mycode/php_video/webroot/1.mp4";
-        $obj->addWatermark();
         $result = $obj->uploadLocalFile($uploadAddress, $videoFile);
         print_r($result);
     }
