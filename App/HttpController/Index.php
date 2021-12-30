@@ -35,15 +35,9 @@ class Index extends Controller
         $videoFile = "/home/mycode/php_video/webroot/1.mp4";
         $result = $obj->testUploadLocalVideo(\Yaconf::get("aliyun.accessKeyId"), \Yaconf::get("aliyun.accessKeySecret"),$videoFile);
 
-//        $uploadAddress = json_decode(base64_decode($result->UploadAddress), true);
-//
-//        $uploadAuth = json_decode(base64_decode($result->UploadAuth), true);
-//
-//        $obj->initOssClient($uploadAuth, $uploadAddress);
-//
-//        $videoFile = "/home/work/hdtocs/imooc/imooc_esapi/webroot/video/2018/10/7648e6280470bbbc.mp4";
-//        $result = $obj->uploadLocalFile($uploadAddress, $videoFile);
+        echo "<pre>";
         print_r($result);
+        echo "</pre>";
     }
 
 }
