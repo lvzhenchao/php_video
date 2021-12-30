@@ -44,10 +44,11 @@ class CallbackTest extends TestOssClientBase
         /**
          * step 3.
          */
+        
         $json = 
         '{
-            "callbackUrl":"'.Common::getCallbackUrl().'",'.
-        '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+            "callbackUrl":"oss-demo.aliyuncs.com:23450",
+            "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
             "callbackBody":"{\"mimeType\":${mimeType},\"size\":${size},\"x:var1\":${x:var1},\"x:var2\":${x:var2}}",
             "callbackBodyType":"application/json"
         }';
@@ -138,8 +139,8 @@ class CallbackTest extends TestOssClientBase
         {
             $json = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"{\"mimeType\":${mimeType},\"size\":${size}}",
                 "callbackBodyType":"application/json"
             }';
@@ -150,8 +151,8 @@ class CallbackTest extends TestOssClientBase
        {
             $url = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"bucket=${bucket}&object=${object}&etag=${etag}&size=${size}&mimeType=${mimeType}&imageInfo.height=${imageInfo.height}&imageInfo.width=${imageInfo.width}&imageInfo.format=${imageInfo.format}",
                 "callbackBodyType":"application/x-www-form-urlencoded"
             }';
@@ -162,8 +163,8 @@ class CallbackTest extends TestOssClientBase
        {
             $url = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"bucket=${bucket}&object=${object}&etag=${etag}&size=${size}&mimeType=${mimeType}&imageInfo.height=${imageInfo.height}&imageInfo.width=${imageInfo.width}&imageInfo.format=${imageInfo.format}"
             }';
             $options = array(OssClient::OSS_CALLBACK => $url);
@@ -173,8 +174,8 @@ class CallbackTest extends TestOssClientBase
         {
             $json = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"{\" 春水碧于天，画船听雨眠。\":\"垆边人似月，皓腕凝霜雪。\"}",
                 "callbackBodyType":"application/json"
             }';
@@ -185,8 +186,8 @@ class CallbackTest extends TestOssClientBase
         {
             $url = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"春水碧于天，画船听雨眠。垆边人似月，皓腕凝霜雪",
                 "callbackBodyType":"application/x-www-form-urlencoded"
             }';
@@ -197,8 +198,8 @@ class CallbackTest extends TestOssClientBase
         {
             $json = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"{\"mimeType\":${mimeType},\"size\":${size},\"x:var1\":${x:var1},\"x:var2\":${x:var2}}",
                 "callbackBodyType":"application/json"
             }';
@@ -217,8 +218,8 @@ class CallbackTest extends TestOssClientBase
         {
             $url = 
             '{
-                "callbackUrl":"'.Common::getCallbackUrl().'",'.
-            '   "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
+                "callbackUrl":"oss-demo.aliyuncs.com:23450",
+                "callbackHost":"oss-cn-hangzhou.aliyuncs.com",
                 "callbackBody":"bucket=${bucket}&object=${object}&etag=${etag}&size=${size}&mimeType=${mimeType}&imageInfo.height=${imageInfo.height}&imageInfo.width=${imageInfo.width}&imageInfo.format=${imageInfo.format}&my_var1=${x:var1}&my_var2=${x:var2}",
                 "callbackBodyType":"application/x-www-form-urlencoded"
             }';
@@ -289,7 +290,7 @@ class CallbackTest extends TestOssClientBase
         }
     }
 
-    protected function setUp(): void
+    public function setUp()
     {
         parent::setUp();
     }

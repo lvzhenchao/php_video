@@ -39,16 +39,6 @@ class Common
         return getenv('OSS_BUCKET');
     }
 
-    public static function getRegion()
-    {
-		return getenv('OSS_REGION'); 
-    }
-
-	public static function getCallbackUrl()
-    {
-        return getenv('OSS_CALLBACK_URL');
-    }
-
     /**
      * Tool method, create a bucket
      */

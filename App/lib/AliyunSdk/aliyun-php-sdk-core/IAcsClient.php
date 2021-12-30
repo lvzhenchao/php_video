@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,17 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-/**
- * @deprecated See: https://github.com/aliyun/openapi-sdk-php
- * Interface IAcsClient
- */
 interface IAcsClient
 {
-    /**
-     * @param AcsRequest $request
-     *
-     * @return mixed
-     */
-    public function doAction($request);
+    public function doAction($requst);
 }

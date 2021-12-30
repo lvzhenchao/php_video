@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,49 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-/**
- * @deprecated See: https://github.com/aliyun/openapi-sdk-php
- * Class AcsResponse
- */
 class AcsResponse
 {
-    /**
-     * @var string
-     */
     private $code;
-    /**
-     * @var string
-     */
     private $message;
-
-    /**
-     * @return string
-     */
+    
     public function getCode()
     {
         return $this->code;
     }
-
-    /**
-     * @param string $code
-     */
+    
     public function setCode($code)
     {
         $this->code = $code;
     }
-
-    /**
-     * @return string
-     */
+    
     public function getMessage()
     {
         return $this->message;
     }
-
-    /**
-     * @param string $message
-     */
+    
     public function setMessage($message)
     {
         $this->message = $message;

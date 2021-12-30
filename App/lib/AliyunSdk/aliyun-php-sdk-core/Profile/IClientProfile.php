@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,19 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-/**
- * @deprecated See: https://github.com/aliyun/openapi-sdk-php
- * Interface IClientProfile
- */
 interface IClientProfile
 {
     public function getSigner();
-
+    
     public function getRegionId();
-
+    
     public function getFormat();
-
+    
     public function getCredential();
 
     public function isRamRoleArn();

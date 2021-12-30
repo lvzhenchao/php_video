@@ -1,129 +1,107 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace vod\Request\V20170321;
 
-/**
- * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
- *
- * Request of GetVideoPlayAuth
- *
- * @method string getResourceOwnerId()
- * @method string getReAuthInfo()
- * @method string getPlayConfig()
- * @method string getResourceOwnerAccount()
- * @method string getVideoId()
- * @method string getOwnerId()
- * @method string getAuthInfoTimeout()
- */
 class GetVideoPlayAuthRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("vod", "2017-03-21", "GetVideoPlayAuth", "vod", "openAPI");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $resourceOwnerId;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'vod',
-            '2017-03-21',
-            'GetVideoPlayAuth',
-            'vod'
-        );
-    }
+	private  $resourceOwnerAccount;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $reAuthInfo;
 
-        return $this;
-    }
+	private  $playConfig;
 
-    /**
-     * @param string $reAuthInfo
-     *
-     * @return $this
-     */
-    public function setReAuthInfo($reAuthInfo)
-    {
-        $this->requestParameters['ReAuthInfo'] = $reAuthInfo;
-        $this->queryParameters['ReAuthInfo'] = $reAuthInfo;
+	private  $authInfoTimeout;
 
-        return $this;
-    }
+	private  $videoId;
 
-    /**
-     * @param string $playConfig
-     *
-     * @return $this
-     */
-    public function setPlayConfig($playConfig)
-    {
-        $this->requestParameters['PlayConfig'] = $playConfig;
-        $this->queryParameters['PlayConfig'] = $playConfig;
+	private  $ownerId;
 
-        return $this;
-    }
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
 
-    /**
-     * @param string $videoId
-     *
-     * @return $this
-     */
-    public function setVideoId($videoId)
-    {
-        $this->requestParameters['VideoId'] = $videoId;
-        $this->queryParameters['VideoId'] = $videoId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
 
-        return $this;
-    }
+	public function getReAuthInfo() {
+		return $this->reAuthInfo;
+	}
 
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+	public function setReAuthInfo($reAuthInfo) {
+		$this->reAuthInfo = $reAuthInfo;
+		$this->queryParameters["ReAuthInfo"]=$reAuthInfo;
+	}
 
-        return $this;
-    }
+	public function getPlayConfig() {
+		return $this->playConfig;
+	}
 
-    /**
-     * @param string $authInfoTimeout
-     *
-     * @return $this
-     */
-    public function setAuthInfoTimeout($authInfoTimeout)
-    {
-        $this->requestParameters['AuthInfoTimeout'] = $authInfoTimeout;
-        $this->queryParameters['AuthInfoTimeout'] = $authInfoTimeout;
+	public function setPlayConfig($playConfig) {
+		$this->playConfig = $playConfig;
+		$this->queryParameters["PlayConfig"]=$playConfig;
+	}
 
-        return $this;
-    }
+	public function getAuthInfoTimeout() {
+		return $this->authInfoTimeout;
+	}
+
+	public function setAuthInfoTimeout($authInfoTimeout) {
+		$this->authInfoTimeout = $authInfoTimeout;
+		$this->queryParameters["AuthInfoTimeout"]=$authInfoTimeout;
+	}
+
+	public function getVideoId() {
+		return $this->videoId;
+	}
+
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+	
 }

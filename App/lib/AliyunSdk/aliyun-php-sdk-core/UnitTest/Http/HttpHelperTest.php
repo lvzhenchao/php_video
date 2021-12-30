@@ -18,7 +18,6 @@
  * under the License.
  */
 include_once '../BaseTest.php';
-
 class HttpHelperTest extends BaseTest
 {
     public function testCurl()

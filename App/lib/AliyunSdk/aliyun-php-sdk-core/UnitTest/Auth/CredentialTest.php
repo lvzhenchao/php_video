@@ -18,7 +18,6 @@
  * under the License.
  */
 include_once '../../Config.php';
-
 class CredentialTest extends PHPUnit_Framework_TestCase
 {
     public function testCredential()
@@ -27,7 +26,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("accessKeyId", $credential->getAccessKeyId());
         $this->assertEquals("accessSecret", $credential->getAccessSecret());
         $this->assertNotNull($credential->getRefreshDate());
-
+        
         $dateNow = date("Y-m-d\TH:i:s\Z");
         $credential->setExpiredDate(1);
         $this->assertNotNull($credential->getExpiredDate());

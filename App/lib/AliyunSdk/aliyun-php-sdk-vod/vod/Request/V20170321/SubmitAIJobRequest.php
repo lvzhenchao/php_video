@@ -1,157 +1,118 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace vod\Request\V20170321;
 
-/**
- * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
- *
- * Request of SubmitAIJob
- *
- * @method string getResourceOwnerId()
- * @method string getUserData()
- * @method string getTypes()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
- * @method string getMediaId()
- * @method string getInput()
- * @method string getConfig()
- */
 class SubmitAIJobRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("vod", "2017-03-21", "SubmitAIJob", "vod", "openAPI");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $userData;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'vod',
-            '2017-03-21',
-            'SubmitAIJob',
-            'vod'
-        );
-    }
+	private  $resourceOwnerId;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $types;
 
-        return $this;
-    }
+	private  $resourceOwnerAccount;
 
-    /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
+	private  $ownerAccount;
 
-        return $this;
-    }
+	private  $ownerId;
 
-    /**
-     * @param string $types
-     *
-     * @return $this
-     */
-    public function setTypes($types)
-    {
-        $this->requestParameters['Types'] = $types;
-        $this->queryParameters['Types'] = $types;
+	private  $mediaId;
 
-        return $this;
-    }
+	private  $config;
 
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+	public function getUserData() {
+		return $this->userData;
+	}
 
-        return $this;
-    }
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+	public function getTypes() {
+		return $this->types;
+	}
 
-        return $this;
-    }
+	public function setTypes($types) {
+		$this->types = $types;
+		$this->queryParameters["Types"]=$types;
+	}
 
-    /**
-     * @param string $mediaId
-     *
-     * @return $this
-     */
-    public function setMediaId($mediaId)
-    {
-        $this->requestParameters['MediaId'] = $mediaId;
-        $this->queryParameters['MediaId'] = $mediaId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
 
-        return $this;
-    }
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
 
-    /**
-     * @param string $input
-     *
-     * @return $this
-     */
-    public function setInput($input)
-    {
-        $this->requestParameters['Input'] = $input;
-        $this->queryParameters['Input'] = $input;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
 
-        return $this;
-    }
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
 
-    /**
-     * @param string $config
-     *
-     * @return $this
-     */
-    public function setConfig($config)
-    {
-        $this->requestParameters['Config'] = $config;
-        $this->queryParameters['Config'] = $config;
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
 
-        return $this;
-    }
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getMediaId() {
+		return $this->mediaId;
+	}
+
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
+	}
+
+	public function getConfig() {
+		return $this->config;
+	}
+
+	public function setConfig($config) {
+		$this->config = $config;
+		$this->queryParameters["Config"]=$config;
+	}
+	
 }

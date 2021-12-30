@@ -4,7 +4,7 @@ namespace OSS\Tests;
 
 require_once __DIR__ . '/Common.php';
 
-class ContentTypeTest extends TestOssClientBase
+class ContentTypeTest extends \PHPUnit_Framework_TestCase
 {
     private function runCmd($cmd)
     {
@@ -17,15 +17,15 @@ class ContentTypeTest extends TestOssClientBase
 
     private function getContentType($bucket, $object)
     {
-        $client = $this->ossClient;
+        $client = Common::getOssClient();
         $headers = $client->getObjectMeta($bucket, $object);
         return $headers['content-type'];
     }
 
     public function testByFileName()
     {
-        $client = $this->ossClient;
-        $bucket = $this->bucket;
+        $client = Common::getOssClient();
+        $bucket = Common::getBucketName();
 
         $file = '/tmp/x.html';
         $object = 'test/x';
@@ -48,8 +48,8 @@ class ContentTypeTest extends TestOssClientBase
 
     public function testByObjectKey()
     {
-        $client = $this->ossClient;
-        $bucket = $this->bucket;
+        $client = Common::getOssClient();
+        $bucket = Common::getBucketName();
 
         $object = "test/x.txt";
         $client->putObject($bucket, $object, "hello world");
@@ -96,8 +96,8 @@ class ContentTypeTest extends TestOssClientBase
 
     public function testByUser()
     {
-        $client = $this->ossClient;
-        $bucket = $this->bucket;
+        $client = Common::getOssClient();
+        $bucket = Common::getBucketName();
 
         $object = "test/x.txt";
         $client->putObject($bucket, $object, "hello world", array(

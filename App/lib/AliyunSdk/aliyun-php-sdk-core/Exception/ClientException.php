@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,83 +17,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-/**
- * @deprecated See: https://github.com/aliyun/openapi-sdk-php
- * Class ClientException
- */
 class ClientException extends Exception
 {
-    /**
-     * @var string
-     */
-    private $errorCode;
-    /**
-     * @var string
-     */
-    private $errorMessage;
-    /**
-     * @var string
-     */
-    private $errorType;
-
-    /**
-     * ClientException constructor.
-     *
-     * @param $errorMessage
-     * @param $errorCode
-     */
     public function __construct($errorMessage, $errorCode)
     {
         parent::__construct($errorMessage);
         $this->errorMessage = $errorMessage;
-        $this->errorCode    = $errorCode;
-        $this->setErrorType('Client');
+        $this->errorCode = $errorCode;
+        $this->setErrorType("Client");
     }
-
-    /**
-     * @return string
-     */
+    
+    private $errorCode;
+    private $errorMessage;
+    private $errorType;
+    
     public function getErrorCode()
     {
         return $this->errorCode;
     }
-
-    /**
-     * @param $errorCode
-     */
+    
     public function setErrorCode($errorCode)
     {
         $this->errorCode = $errorCode;
     }
-
-    /**
-     * @return string
-     */
+    
     public function getErrorMessage()
     {
         return $this->errorMessage;
     }
-
-    /**
-     * @param $errorMessage
-     */
+    
     public function setErrorMessage($errorMessage)
     {
         $this->errorMessage = $errorMessage;
     }
-
-    /**
-     * @return string
-     */
+    
     public function getErrorType()
     {
         return $this->errorType;
     }
-
-    /**
-     * @param $errorType
-     */
+    
     public function setErrorType($errorType)
     {
         $this->errorType = $errorType;

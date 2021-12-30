@@ -4,12 +4,12 @@ namespace OSS\Tests;
 
 require_once __DIR__ . '/Common.php';
 
-class ObjectAclTest extends TestOssClientBase
+class ObjectAclTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetSet()
     {
-        $client = $this->ossClient;
-        $bucket = $this->bucket;
+        $client = Common::getOssClient();
+        $bucket = Common::getBucketName();
 
         $object = 'test/object-acl';
         $client->deleteObject($bucket, $object);

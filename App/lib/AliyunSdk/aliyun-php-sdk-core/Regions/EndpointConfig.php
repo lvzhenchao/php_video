@@ -17,16 +17,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-$endpoint_filename = __DIR__ . DIRECTORY_SEPARATOR . 'endpoints.xml';
-$xml               = simplexml_load_string(file_get_contents($endpoint_filename));
-$json              = json_encode($xml);
-$json_array        = json_decode($json, true);
+$endpoint_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . "endpoints.xml";
+$xml = simplexml_load_string(file_get_contents($endpoint_filename));
+$json = json_encode($xml);
+$json_array = json_decode($json, true);
 
 $endpoints = array();
 
-foreach ($json_array['Endpoint'] as $json_endpoint) {
+foreach ($json_array["Endpoint"] as $json_endpoint) {
     # pre-process RegionId & Product
-    if (!array_key_exists('RegionId', $json_endpoint['RegionIds'])) {
+    if (!array_key_exists("RegionId", $json_endpoint["RegionIds"])) {
         $region_ids = array();
     } else {
         $json_region_ids = $json_endpoint['RegionIds']['RegionId'];
@@ -37,12 +37,12 @@ foreach ($json_array['Endpoint'] as $json_endpoint) {
         }
     }
 
-    if (!array_key_exists('Product', $json_endpoint['Products'])) {
+    if (!array_key_exists("Product", $json_endpoint["Products"])) {
         $products = array();
     } else {
-        $json_products = $json_endpoint['Products']['Product'];
+        $json_products = $json_endpoint["Products"]["Product"];
 
-        if (array() === $json_products || !is_array($json_products)) {
+        if (array() === $json_products or !is_array($json_products)) {
             $products = array();
         } elseif (array_keys($json_products) !== range(0, count($json_products) - 1)) {
             # array is not sequential
@@ -54,12 +54,12 @@ foreach ($json_array['Endpoint'] as $json_endpoint) {
 
     $product_domains = array();
     foreach ($products as $product) {
-        $product_domain    = new ProductDomain($product['ProductName'], $product['DomainName']);
-        $product_domains[] = $product_domain;
+        $product_domain = new ProductDomain($product['ProductName'], $product['DomainName']);
+        array_push($product_domains, $product_domain);
     }
 
-    $endpoint    = new Endpoint($region_ids[0], $region_ids, $product_domains);
-    $endpoints[] = $endpoint;
+    $endpoint = new Endpoint($region_ids[0], $region_ids, $product_domains);
+    array_push($endpoints, $endpoint);
 }
 
 EndpointProvider::setEndpoints($endpoints);

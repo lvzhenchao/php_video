@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,24 +17,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-/**
- * @deprecated See: https://github.com/aliyun/openapi-sdk-php
- * Class EndpointProvider
- */
 class EndpointProvider
 {
-    /**
-     * @var array
-     */
     private static $endpoints;
-
-    /**
-     * @param $regionId
-     * @param $product
-     *
-     * @return null
-     */
+    
     public static function findProductDomain($regionId, $product)
     {
         if (null == $regionId || null == $product || null == self::$endpoints) {
@@ -48,13 +33,7 @@ class EndpointProvider
         }
         return null;
     }
-
-    /**
-     * @param $productDomains
-     * @param $product
-     *
-     * @return null
-     */
+    
     private static function findProductDomainByProduct($productDomains, $product)
     {
         if (null == $productDomains) {
@@ -67,18 +46,13 @@ class EndpointProvider
         }
         return null;
     }
-
-    /**
-     * @return array
-     */
+    
+    
     public static function getEndpoints()
     {
         return self::$endpoints;
     }
-
-    /**
-     * @param $endpoints
-     */
+    
     public static function setEndpoints($endpoints)
     {
         self::$endpoints = $endpoints;
