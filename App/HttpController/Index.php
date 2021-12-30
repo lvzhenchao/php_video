@@ -12,6 +12,10 @@ class Index extends Controller
         $this->response()->write('I am index');
     }
 
+    /**
+     * 测试旧版上传
+     *
+     */
     public function testali() {
         $obj = new AliVod();
         $title = "singwa-imooc-video";
@@ -25,10 +29,15 @@ class Index extends Controller
         $obj->initOssClient($uploadAuth, $uploadAddress);
 
         $videoFile = "/home/mycode/php_video/webroot/1.mp4";
+        $obj->addWatermark();
         $result = $obj->uploadLocalFile($uploadAddress, $videoFile);
         print_r($result);
     }
 
+    /**
+     * 测试新版上传
+     *
+     */
     public function testali1() {
         $obj = new AliVod2();
 
