@@ -40,4 +40,13 @@ class Index extends Controller
         echo "</pre>";
     }
 
+    public function testPlay() {
+        $obj = new AliVod();
+        $videoId = "737b631aab5644138f52b07f5cba9de6";
+        $playInfo = $obj->getPlayInfo($videoId);
+
+        print_r($playInfo->PlayInfoList->PlayInfo);
+        print_r($playInfo);
+    }
+
 }
