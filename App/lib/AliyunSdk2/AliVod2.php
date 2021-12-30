@@ -3,9 +3,16 @@ namespace App\Lib\AliyunSdk2;
 
 //require_once EASYSWOOLE_ROOT.'/App/lib/AliyunSdk2/Autoloader.php';
 require_once dirname(__DIR__) . '/AliyunSdk2/Autoloader.php';
+require_once dirname(__DIR__) . '/AliyunSdk2/aliyun-php-sdk/aliyun-php-sdk-core/Config.php';   // 假定您的源码文件和aliyun-php-sdk处于同一目录
+use vod\Request\V20170321 as vod;
 
 class AliVod2 {
 
+//    function initVodClient($accessKeyId, $accessKeySecret) {
+//        $regionId = 'cn-shanghai';  // 点播服务接入区域
+//        $profile = \DefaultProfile::getProfile($regionId, $accessKeyId, $accessKeySecret);
+//        return new \DefaultAcsClient($profile);
+//    }
 
 
 // 测试上传本地视频
