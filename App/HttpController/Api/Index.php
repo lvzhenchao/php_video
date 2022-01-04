@@ -5,6 +5,8 @@ namespace App\HttpController\Api;
 use App\lib\Redis\Redis;
 use \EasySwoole\Core\Component\Di;
 use App\Model\Video as VideoModel;
+use EasySwoole\Core\Http\Message\Status;
+
 class Index extends Base
 {
 
