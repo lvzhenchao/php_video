@@ -3,7 +3,7 @@ namespace App\Lib\AliyunSdk2;
 
 //require_once EASYSWOOLE_ROOT.'/App/lib/AliyunSdk2/Autoloader.php';
 require_once dirname(__DIR__) . '/AliyunSdk2/Autoloader.php';
-require_once dirname(__DIR__) . '/AliyunSdk2/aliyun-php-sdk/aliyun-php-sdk-core/Config.php';   // 假定您的源码文件和aliyun-php-sdk处于同一目录
+require_once dirname(__DIR__) . '/AliyunSdk2/aliyun-php-sdk-core/Config.php';   // 假定您的源码文件和aliyun-php-sdk处于同一目录
 use vod\Request\V20170321 as vod;
 
 class AliVod2 {
@@ -26,11 +26,11 @@ class AliVod2 {
             //$uploadVideoRequest->setTags('test1,test2');
             //$uploadVideoRequest->setStorageLocation('outin-xx.oss-cn-beijing.aliyuncs.com');
             //$uploadVideoRequest->setTemplateGroupId('6ae347b0140181ad371d197ebe289326');
-            $userData = array(
-                "MessageCallback"=>array("CallbackURL"=>"https://demo.sample.com/ProcessMessageCallback"),
-                "Extend"=>array("localId"=>"xxx", "test"=>"www")
-            );
-            $uploadVideoRequest->setUserData(json_encode($userData));
+//            $userData = array(
+//                "MessageCallback"=>array("CallbackURL"=>"https://demo.sample.com/ProcessMessageCallback"),
+//                "Extend"=>array("localId"=>"xxx", "test"=>"www")
+//            );
+//            $uploadVideoRequest->setUserData(json_encode($userData));
             $res = $uploader->uploadLocalVideo($uploadVideoRequest);
             return $res;
 //            echo "<pre>";
