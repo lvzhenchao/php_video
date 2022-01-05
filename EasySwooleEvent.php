@@ -70,15 +70,15 @@ Class EasySwooleEvent implements EventInterface {
 //                $cacheVideoObj->setIndexVideo();
 //            });
 
-        CronTab::getInstance()
-            ->addRule("test_singwa_crontab1", "*/1 * * * *",
-                function()  {
-                    var_dump("第一个定时任务");
-            })
-            ->addRule("test_singwa_crontab2", "*/1 * * * *",
-                function()  {
-                    var_dump("第二个定时任务");
-            });
+//        CronTab::getInstance()
+//            ->addRule("test_singwa_crontab1", "*/1 * * * *",
+//                function()  {
+//                    var_dump("第一个定时任务");
+//            })
+//            ->addRule("test_singwa_crontab2", "*/1 * * * *",
+//                function()  {
+//                    var_dump("第二个定时任务");
+//            });
     }
 
     public static function onRequest(Request $request,Response $response): void
