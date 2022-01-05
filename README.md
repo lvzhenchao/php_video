@@ -70,3 +70,14 @@ php -m
 `
 
 # 阿里云点播
+
+# 静态化API [https://www.jianshu.com/p/6d605248d5a7]
+- 把接口生成json文件存储到服务器本地
+- 一般的系统瓶颈点，在数据库这层
+- 方式：
+`
+方案1easySwoole + crontab
+方案2 easySwoole定时器
+方案3 Swoole table
+方案4 Redis
+`
