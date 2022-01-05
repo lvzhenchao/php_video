@@ -18,6 +18,8 @@ use \EasySwoole\Core\Http\Response;
 use \EasySwoole\Core\Component\Di;
 use EasySwoole\Core\Utility\File;
 use App\Lib\Process\ConsumerTest;
+use EasySwoole\Core\Component\Crontab\CronTab;
+use App\Lib\Cache\Video as videoCache;
 
 Class EasySwooleEvent implements EventInterface {
 
@@ -60,6 +62,12 @@ Class EasySwooleEvent implements EventInterface {
         for ($i = 0 ;$i < $allNum;$i++){
             ProcessManager::getInstance()->addProcess("imooc_consumer_testp_{$i}",ConsumerTest::class);
         }
+
+        $cacheVideoObj = new videoCache();
+        CronTab::getInstance()
+            ->addRule("test_singwa_crontab", "*/1 * * * *", function() use($cacheVideoObj) {
+                $cacheVideoObj->setIndexVideo();
+            });
     }
 
     public static function onRequest(Request $request,Response $response): void
