@@ -19,7 +19,7 @@ use \EasySwoole\Core\Component\Di;
 use EasySwoole\Core\Utility\File;
 use App\Lib\Process\ConsumerTest;
 use EasySwoole\Core\Component\Crontab\CronTab;
-use App\Lib\Cache\Video as videoCache;
+//use App\Lib\Cache\Video as videoCache;
 
 Class EasySwooleEvent implements EventInterface {
 
@@ -63,10 +63,21 @@ Class EasySwooleEvent implements EventInterface {
             ProcessManager::getInstance()->addProcess("imooc_consumer_testp_{$i}",ConsumerTest::class);
         }
 
-        $cacheVideoObj = new videoCache();
+        //定时任务 静态化API数据
+//        $cacheVideoObj = new videoCache();
+//        CronTab::getInstance()
+//            ->addRule("test_singwa_crontab", "*/1 * * * *", function() use($cacheVideoObj) {
+//                $cacheVideoObj->setIndexVideo();
+//            });
+
         CronTab::getInstance()
-            ->addRule("test_singwa_crontab", "*/1 * * * *", function() use($cacheVideoObj) {
-                $cacheVideoObj->setIndexVideo();
+            ->addRule("test_singwa_crontab1", "*/1 * * * *",
+                function()  {
+                    var_dump("第一个定时任务");
+            })
+            ->addRule("test_singwa_crontab2", "*/1 * * * *",
+                function()  {
+                    var_dump("第二个定时任务");
             });
     }
 
