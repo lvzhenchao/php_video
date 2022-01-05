@@ -47,5 +47,26 @@ php -m
 `
 
 # 反射机制一定要熟知：利用反射机制实现图片和视频的上传
+`
+
+    public  function uploadClassStat() {
+        return [
+            "image" => "App\lib\Upload\Image",
+            "video" => "App\lib\Upload\Video",
+        ];
+    }
+
+    public function initClass($type, $suportedClass, $params = [], $needInstance = true) {
+        if (!array_key_exists($type, $suportedClass)) {
+            return false;
+        }
+
+        $className = $suportedClass[$type];
+
+        return $needInstance ? (new \ReflectionClass($className))->newInstanceArgs($params) : $className;
+
+    }
+
+`
 
 # 阿里云点播
