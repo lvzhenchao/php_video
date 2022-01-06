@@ -6,6 +6,7 @@ use App\lib\Redis\Redis;
 use \EasySwoole\Core\Component\Di;
 use App\Model\Video as VideoModel;
 use EasySwoole\Core\Http\Message\Status;
+use App\lib\Cache\Video as VideoCache;
 
 class Index extends Base
 {

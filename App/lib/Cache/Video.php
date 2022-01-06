@@ -2,11 +2,10 @@
 namespace App\lib\Cache;
 use App\Model\Video as VideoModel;
 class Video{
+
     public function setIndexVideo(){
         $catIds = array_keys(\Yaconf::get("category.cats"));
         array_unshift($catIds, 0);
-
-        print_r($catIds);
 
         //写video json 缓存数据
         $modelObj = new VideoModel();
@@ -42,7 +41,14 @@ class Video{
             }
 
 
-
         }
+    }
+
+    public function getCache($catId){
+        $videoFile = EASYSWOOLE_ROOT."/webroot/video/json/".$catId.".json";
+        $videoData = is_file($videoFile) ? file_get_contents($videoFile) : [];
+        $videoData = !empty($videoData) ? json_decode($videoData,true) : [];
+
+        return $videoData;
     }
 }
