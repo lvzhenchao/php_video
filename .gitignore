@@ -8,3 +8,4 @@ webroot/.htaccess
 *.png
 *.mp4
 ini/aliyun.ini
+*.json
