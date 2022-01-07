@@ -63,6 +63,7 @@ Class EasySwooleEvent implements EventInterface {
             ProcessManager::getInstance()->addProcess("imooc_consumer_testp_{$i}",ConsumerTest::class);
         }
 
+        //定时任务
 //        CronTab::getInstance()
 //            ->addRule("test_singwa_crontab1", "*/1 * * * *",
 //                function()  {
