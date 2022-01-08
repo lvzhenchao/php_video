@@ -20,6 +20,7 @@ use EasySwoole\Core\Utility\File;
 use App\Lib\Process\ConsumerTest;
 use EasySwoole\Core\Component\Crontab\CronTab;
 use App\lib\Cache\Video as videoCache;
+use EasySwoole\Core\Swoole\Time\Timer;
 
 Class EasySwooleEvent implements EventInterface {
 
@@ -73,12 +74,34 @@ Class EasySwooleEvent implements EventInterface {
 //                function()  {
 //                    var_dump("第二个定时任务");
 //            });
-        //定时任务 静态化API数据
+        //定时任务 静态化API数据：最小一分钟定时任务
+        //方案一：定时任务
+//        $cacheVideoObj = new videoCache();
+//        CronTab::getInstance()
+//            ->addRule("test_singwa_crontab", "*/1 * * * *", function() use($cacheVideoObj) {
+//                $cacheVideoObj->setIndexVideo();
+//        });
+
+
+        //方案二：swoole 定时器，支持毫秒级
+//        Timer::loop(1000*2, function () {
+//            var_dump(111);
+//        });
+        //简单使用
         $cacheVideoObj = new videoCache();
-        CronTab::getInstance()
-            ->addRule("test_singwa_crontab", "*/1 * * * *", function() use($cacheVideoObj) {
-                $cacheVideoObj->setIndexVideo();
-            });
+        Timer::loop(1000*2, function () use($cacheVideoObj){
+            $cacheVideoObj->setIndexVideo();
+        });
+        //复杂使用
+//        $register->add(EventRegister::onWorkerStart, function (\swoole_server $server, $workerId)use($cacheVideoObj){
+//            if ($workerId == 0) {
+//                Timer::loop(1000*2, function () use($cacheVideoObj){
+//                    $cacheVideoObj->setIndexVideo();
+//                });
+//            }
+//
+//        });
+
 
 
     }
