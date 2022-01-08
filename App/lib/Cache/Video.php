@@ -1,6 +1,8 @@
 <?php
 namespace App\lib\Cache;
 use App\Model\Video as VideoModel;
+use EasySwoole\Core\Component\Cache\Cache ;
+
 class Video{
 
     public function setIndexVideo(){
@@ -32,7 +34,13 @@ class Video{
                 $list['video_duration'] = gmstrftime("%H:%M:%S", $list['video_duration']);
             }
 
-            $flag = file_put_contents(EASYSWOOLE_ROOT."/webroot/video/json/".$catId.".json", json_encode($data));
+            //文件写入方式
+//            $flag = file_put_contents(EASYSWOOLE_ROOT."/webroot/video/json/".$catId.".json", json_encode($data));
+
+            //swoole table写入方式
+            //swoole_serialize::pack 已废弃,使用不能用了
+            $flag = Cache::getInstance()->set("index_video_cat_id_", $data);
+
             if (empty($flag)){
                 //报警-短信-邮件
                 echo "cat_id:".$catId."静态数据缓存失败".PHP_EOL;
@@ -45,9 +53,12 @@ class Video{
     }
 
     public function getCache($catId){
-        $videoFile = EASYSWOOLE_ROOT."/webroot/video/json/".$catId.".json";
-        $videoData = is_file($videoFile) ? file_get_contents($videoFile) : [];
-        $videoData = !empty($videoData) ? json_decode($videoData,true) : [];
+//        $videoFile = EASYSWOOLE_ROOT."/webroot/video/json/".$catId.".json";
+//        $videoData = is_file($videoFile) ? file_get_contents($videoFile) : [];
+//        $videoData = !empty($videoData) ? json_decode($videoData,true) : [];
+
+        $videoData = Cache::getInstance()->get("index_video_cat_id_");
+        $videoData = !empty($videoData) ? $videoData : [];
 
         return $videoData;
     }
