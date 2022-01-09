@@ -2,7 +2,9 @@
 
 namespace App\HttpController\Api;
 use App\Model\Video as VideoModel;
+use EasySwoole\Core\Component\Di;
 use EasySwoole\Core\Component\Logger;
+use EasySwoole\Core\Swoole\Task\TaskManager;
 use EasySwoole\Core\Utility\Validate\Rules;
 use EasySwoole\Core\Utility\Validate\Rule;
 use EasySwoole\Http\Message\Status;
@@ -37,15 +39,16 @@ class Video extends Base
 
         // 播放数统计逻辑
         // 投放task异步任务
-//        TaskManager::async(function() use($id) {
-//            // 逻辑
-//            //sleep(10);
+        TaskManager::async(function() use($id) {
+            // 逻辑
+//            sleep(10);
 //            // redis
-//
-//            $res = Di::getInstance()->get("REDIS")->zincrby(\Yaconf::get("redis.video_play_key"), 1, $id);
-//
-//            // 按天记录
-//        });
+//            print_r("测试异步任务");
+
+            $res = Di::getInstance()->get("REDIS")->zincrby(\Yaconf::get("redis.video_play_key"), 1, $id);
+var_dump($res);
+            // 按天记录
+        });
 
         return $this->writeJson(200, 'OK', $video);
     }
