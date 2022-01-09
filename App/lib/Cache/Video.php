@@ -2,7 +2,7 @@
 namespace App\lib\Cache;
 use App\Model\Video as VideoModel;
 use EasySwoole\Core\Component\Cache\Cache ;
-use EasySwoole\Core\Component\Di;
+use \EasySwoole\Core\Component\Di;
 
 class Video{
 
