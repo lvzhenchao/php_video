@@ -31,4 +31,21 @@ class Base {
 
     }
 
+    /**
+     * 通过ID 获取 基本信息
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function getById($id) {
+        $id = intval($id);
+        if(empty($id)) {
+            return [];
+        }
+
+        $this->db->where ("id", $id);
+        $result = $this->db->getOne($this->tableName);
+        return $result ?? [];
+    }
+
 }
