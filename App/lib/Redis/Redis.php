@@ -97,15 +97,16 @@ class Redis{
         return $this->redis->zincrby($key, $number, $member);
     }
 
-    public function zrevrange($key, $start, $stop, $type) {
+    public function zrevrange_测试魔术方法($key, $start, $stop, $type) {
         if(empty($key)) {
             return false;
         }
 
-        return $this->redis->zrevrange($key, $start, $stop, $type);
+        return $this->redis->zrevrange($key, $start, $stop, $type);//有时、这个方法会有不存在的情况。
     }
 
     /**
+     * 魔术方法
      * 当类中不存在该方法时候，直接调用call 实现调用底层redis相关的方法
      * @auth   singwa
      * @param  [type] $name      [description]
@@ -114,6 +115,8 @@ class Redis{
      */
     public function __call($name, $arguments) {
 
+//        print_r($name);
+//        print_r($arguments);
         ///var_dump(...$arguments);
         return $this->redis->$name(...$arguments);
     }
