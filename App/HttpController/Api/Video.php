@@ -46,7 +46,7 @@ class Video extends Base
 //            print_r("测试异步任务");
 
             $res = Di::getInstance()->get("REDIS")->zincrby(\Yaconf::get("redis.video_play_key"), 1, $id);
-var_dump($res);
+
             // 按天记录
         });
 
@@ -103,8 +103,6 @@ var_dump($res);
         return $this->writeJson(Status::CODE_OK, 'ok', ['id'=>$video_id]);
 
 
-
-        return $this->writeJson(200,'ok', $params);
     }
 
 
