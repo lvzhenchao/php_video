@@ -53,6 +53,17 @@ class Video extends Base
         return $this->writeJson(200, 'OK', $video);
     }
 
+    /**
+     * 排行榜
+     *
+     */
+    public function rank() {
+
+        $res = Di::getInstance()->get("REDIS")->zrevrange(\Yaconf::get("redis.video_play_key"), 0, -1, 'withscores');
+        print_r($res);
+        return $this->writeJson(200, 'OK', $res);
+    }
+
     public function add() {
         $params = $this->request()->getRequestParam();
         Logger::getInstance()->log($this->logType . "|add" .json_encode($params, JSON_UNESCAPED_UNICODE));
