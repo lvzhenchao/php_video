@@ -64,6 +64,34 @@ class Video extends Base
         return $this->writeJson(200, 'OK', $res);
     }
 
+    public function love() {
+        $videoId = intval($this->params['id']);
+        if(empty($videoId)) {
+            return $this->writeJson(Status::CODE_BAD_REQUEST, "请求不合法");
+        }
+        //先查询视频是否存在
+        try {
+            $video = (new VideoModel())->getById($videoId);
+        }catch(\Exception $e) {
+            // 记录日志 $e->getMessage()
+            return $this->writeJson(Status::CODE_BAD_REQUEST, "请求不合法");
+        }
+        if(!$video || $video['status'] != \Yaconf::get("status.normal")) {
+            return $this->writeJson(Status::CODE_BAD_REQUEST, "该视频不存在");
+        }
+
+        $res = Di::getInstance()->get("REDIS")->zincrby(\Yaconf::get("redis.video_love"), 1, $videoId);
+
+        //可以放到异步进程里面
+//        TaskManager::async(function() use($videoId) {
+//            $res = Di::getInstance()->get("REDIS")->zincrby(\Yaconf::get("redis.video_love"), 1, $videoId);
+//            //记录 视频 和 用户的关系
+//        });
+
+
+        return $this->writeJson(200, 'OK', $res);
+    }
+
     public function add() {
         $params = $this->request()->getRequestParam();
         Logger::getInstance()->log($this->logType . "|add" .json_encode($params, JSON_UNESCAPED_UNICODE));
