@@ -125,6 +125,18 @@ php -m
     执行命令sysctl -p生效
 
 `
+# elasticsearch-head 跨域访问es
+- config/elasticsearch.yml
+
+`
+
+    # 开启跨域
+    http.cors.enabled: true
+    # 允许所有
+    http.cors.allow-origin: "*"
+
+`
+
 
 
 
