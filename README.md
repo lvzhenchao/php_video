@@ -137,6 +137,9 @@ php -m
 
 `
 
+# mysql数据转es
+[https://cloud.tencent.com/developer/article/1051451]
+
 
 
 
