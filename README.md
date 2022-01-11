@@ -105,8 +105,7 @@ php -m
         
     3、切换到es用户
         su es
-        cd /opt/apps/es/elasticsearch/bin
-        ./elasticsearch
+        ./bin/elasticsearch
 
 `
 
