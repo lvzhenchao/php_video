@@ -117,6 +117,13 @@ php -m
 - max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144] 内存相关设定
 [https://xdoctorx.blog.csdn.net/article/details/106247111?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_paycolumn_v2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_paycolumn_v2&utm_relevant_index=1]
 
+`
+
+    修改/etc/sysctl.conf文件，增加配置
+        vm.max_map_count=262144
+    执行命令sysctl -p生效
+
+`
 
 
 
