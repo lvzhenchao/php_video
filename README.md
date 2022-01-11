@@ -83,3 +83,47 @@ php -m
 `
 # ES
 [https://blog.csdn.net/qq_28289405/article/details/88566245?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&utm_relevant_index=1]
+
+- java.lang.RuntimeException: can not run elasticsearch as root 不能用root启动
+- Exception in thread "main" java.nio.file.AccessDeniedException: /home/es/elasticsearch-6.6.1/config/jvm.options
+
+`
+
+    解决方法有两类：
+    1、修改elaticsearch配置，使其可以允许root用户启动（不建议）
+        #在执行elasticSearch时加上参数-Des.insecure.allow.root=true，完整命令如下
+        ./elasticsearch -Des.insecure.allow.root=true
+        #或者 用vi打开elasicsearch执行文件，在变量ES_JAVA_OPTS使用前添加以下命令
+        ES_JAVA_OPTS="-Des.insecure.allow.root=true"
+    
+    2、为elaticsearch创建用户并赋予相应权限
+    命令如下 具体介绍参考我的另一篇博客linux创建新用户并将为其赋予权限 
+        adduser es
+        passwd es
+        chown -R es:es elasticsearch-6.3.2/
+        chmod 770 elasticsearch-6.3.2/
+        
+    3、切换到es用户
+        su es
+        cd /opt/apps/es/elasticsearch/bin
+        ./elasticsearch
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
