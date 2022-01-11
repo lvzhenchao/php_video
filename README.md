@@ -111,6 +111,14 @@ php -m
 - 参考相关
 [https://blog.csdn.net/ray_352801250/category_9664768.html]
 
+- max file descriptors [65535] for elasticsearch process is too low 进程相关权限设定
+[https://blog.csdn.net/jiahao1186/article/details/90235771]
+
+- max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144] 内存相关设定
+[https://xdoctorx.blog.csdn.net/article/details/106247111?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_paycolumn_v2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_paycolumn_v2&utm_relevant_index=1]
+
+
+
 
 
 
