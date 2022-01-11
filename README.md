@@ -76,11 +76,12 @@ php -m
 - 一般的系统瓶颈点，在数据库这层
 - 方式：
 `
-方案1easySwoole + crontab
+方案1 easySwoole + crontab
 方案2 easySwoole定时器
 方案3 Swoole table
 方案4 Redis
 `
+
 # ES
 [https://blog.csdn.net/qq_28289405/article/details/88566245?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&utm_relevant_index=1]
 
