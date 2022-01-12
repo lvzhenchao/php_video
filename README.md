@@ -137,6 +137,9 @@ php -m
 
 `
 
+# kibana安装启动
+[https://blog.csdn.net/qq_28289405/article/details/88572569]
+
 # mysql数据转es
 [https://cloud.tencent.com/developer/article/1051451]
 [http://www.dreamwu.com/post-1195.html]
