@@ -87,6 +87,7 @@ php -m
 
 - java.lang.RuntimeException: can not run elasticsearch as root 不能用root启动
 - Exception in thread "main" java.nio.file.AccessDeniedException: /home/es/elasticsearch-6.6.1/config/jvm.options
+- 报错could not find java in bundled jdk at /opt/elasticsearch-7.7.0/jdk/bin/java  //附权限 chown -R
 
 `
 
