@@ -179,6 +179,37 @@ php -m
 # es相关概念
 - 分片数：一般是节点数【集群数】的1.5倍
 
+# es新增数据要点
+- put新增时需要加上id
+
+`
+
+    PUT /megacorp/employee/1 
+    { 
+      "first_name" : "John", 
+      "last_name" : "Smith", 
+      "age" : 25, 
+      "about" : "I love to go rock climbing", 
+      "interests": [ "sports", "music" ] 
+      
+    }
+`
+- post新增时不需要加上id，会自增id
+
+`
+    POST /megacorp/employee
+    {
+      "name": "刘德华",
+      "cat_id": 1,
+      "image": 25,
+      "url": "http://baidu.com",
+      "type": 1,
+      "uploader": "singwa",
+      "status": 1,
+      "video_id": "22sss"
+    }
+`
+
 
 
 
