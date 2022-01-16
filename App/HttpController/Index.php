@@ -19,9 +19,17 @@ class Index extends Controller
         $params = [
             "index" => "imooc_video",
             "type"  => "video",
-            "id"    => 1,
+//            "id"    => 1,
+            "body" => [
+                'query' => [
+                    'match' => [
+                        'name' => '刘德华'
+                    ],
+                ],
+            ],
         ];
-        $result = $client->get($params);
+//        $result = $client->get($params);
+        $result = $client->search($params);
 
 
         return $this->writeJson(200, "ok", $result);
