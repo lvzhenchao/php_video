@@ -5,11 +5,28 @@ namespace App\HttpController;
 use App\Lib\AliyunSdk\AliVod;
 use App\Lib\AliyunSdk2\AliVod2;
 use EasySwoole\Core\Http\AbstractInterface\Controller;
+use Elasticsearch\ClientBuilder;
+
 class Index extends Controller
 {
     function index()
     {
-        $this->response()->write('I am index');
+
+        $hosts = [
+            "192.168.33.10:9200",
+        ];
+        $client = ClientBuilder::create()->setHosts($hosts)->build();
+        $params = [
+            "index" => "imooc_video",
+            "type"  => "video",
+            "id"    => 1,
+        ];
+        $result = $client->get($params);
+
+
+        return $this->writeJson(200, "ok", $result);
+
+//        $this->response()->write('I am index');
     }
 
     /**
