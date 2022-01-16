@@ -194,7 +194,7 @@ php -m
       
     }
 `
-- post新增时不需要加上id，会自增id
+- POST新增时不需要加上id，会自增id
 
 `
     POST /megacorp/employee
