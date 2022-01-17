@@ -212,6 +212,29 @@ php -m
 # es-php扩展
 - 参考https://github.com/elastic/elasticsearch-php
 
+`
+
+    $hosts = [
+                "192.168.33.10:9200",
+            ];
+            $client = ClientBuilder::create()->setHosts($hosts)->build();
+            $params = [
+                "index" => "imooc_video",
+                "type"  => "video",
+    //            "id"    => 1,
+                "body" => [
+                    'query' => [
+                        'match' => [
+                            'name' => '刘德华'
+                        ],
+                    ],
+                ],
+            ];
+    //        $result = $client->get($params);
+            $result = $client->search($params);
+
+`
+
 
 
 
