@@ -265,6 +265,13 @@ php -m
         $result = $this->client->indices()->create($params);
         return json($result);
     }
+    
+    创建成功
+    {
+    	"acknowledged": true,
+    	"shards_acknowledged": true,
+    	"index": "shop"
+    }
 
 `
 - 添加文档
@@ -297,6 +304,22 @@ php -m
     
         $result = $this->client->index($params);
         return json($result);
+    }
+    
+    创建成功
+    {
+    	"_index": "shop_good",
+    	"_type": "_doc",
+    	"_id": "1",
+    	"_version": 1,
+    	"result": "created",
+    	"_shards": {
+    		"total": 1,
+    		"successful": 1,
+    		"failed": 0
+    	},
+    	"_seq_no": 5,
+    	"_primary_term": 1
     }
 `
 
