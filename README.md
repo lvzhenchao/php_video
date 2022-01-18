@@ -300,6 +300,113 @@ php -m
     }
 `
 
+- 查询文档
+
+
+`
+
+    根据ID查询文档
+    /**
+     * 功能描述: 根据ID查询文档
+     * @param int $id  ID（相当于mysql表名中的唯一索引值）
+     * @param string $index_name
+     * @return array
+     */
+    public function getDoc($id = 1, $index_name = 'shop_good')
+    {
+        $params = [
+            'index' => $index_name,
+            'id' => $id
+        ];
+    
+        $result = $this->client->get($params);
+        return json($result);
+    }
+    
+    根据条件查询文档
+    /**
+     * 功能描述: 条件查询文档
+     * @param string $keywords 搜索的内容
+     * @param int $from  从第几页开始
+     * @param int $size  每页取多少文档
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function searchDoc($keywords = "", $from = 0, $size = 10, $index_name = "shop_good")
+    {
+        $keywords = '手机';
+        $params = [
+            'index' => $index_name,
+            'body' => [
+                'query' => [
+                    //条件查询
+                    'match' => [
+                        'good_name' => [
+                            'query' => "苹果".$keywords
+                            ]
+                    ]
+                ],
+                'sort' => [
+                    'id' => [
+                        'order' => 'desc'
+                    ]
+                ],
+                'from' => $from,
+                'size' => $size
+            ]
+        ];
+    
+        $results = $this->client->search($params);
+        return json($results);
+    }
+    
+    /**
+     * 功能描述: 查询文档 (分页，排序，权重，过滤)
+     * @param string $keywords 搜索的内容
+     * @param int $from  从第几页开始
+     * @param int $size  每页取多少文档
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function searchMutiDoc($keywords = "", $from = 0, $size = 10, $index_name = "shop")
+    {
+        $keywords = '手机';
+        $params = [
+            'index' => $index_name,
+            'body' => [
+                'query' => [
+                    //bool查询，可以把很多小的查询组成一个更为复杂的查询
+                    'bool' => [
+                        // 这里should【或者】是查询good_name字段包含$keywords关键词或者good_introduction字段包含$keywords关键词的文档。
+                        //可以改为"must"意思是同时包含。must_not排除包含
+                        'should' => [
+                            [ 'match' => [ 'good_name' => [
+                                'query' => $keywords,
+                                'boost' => 3, // 权重大
+                            ]]],
+                            [ 'match' => [ 'good_introduction' => [
+                                'query' => $keywords,
+                                'boost' => 2,
+                            ]]],
+                        ],
+                    ],
+                ],
+                'sort' => [
+                    'id' => [
+                        'order' => 'desc'
+                    ]
+                ],
+                'from' => $from,
+                'size' => $size
+            ]
+        ];
+    
+        $results = $this->client->search($params);
+        return json($results);
+    }
+`
+
+
 
 
 
