@@ -266,8 +266,38 @@ php -m
         return json($result);
     }
 
+`
+- 添加文档
 
+`
 
+    /**
+     * 功能描述: 添加文档
+     * @param int $id  ID（相当于mysql表名中的唯一索引值）
+     * @param array $doc 记录内容（相当于mysql一条记录数据）
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function addDoc($id = 1, $doc = [], $index_name = 'shop_good')
+    {
+    
+        $doc = [
+            'id' => 1,
+            'good_sn' => '4217251852947',
+            'good_name' => '【12期免息 再减500元】Apple/苹果 iPhone 11全网通4G 超广角拍照手机苏宁易购官方store 苹果11 ',
+            'good_introduction' => '选套餐一免费享更多好礼',
+            'good_descript' => '商品详细信息'
+        ];
+    
+        $params = [
+            'index' => $index_name,
+            'id' => $doc['id'],
+            'body' => $doc
+        ];
+    
+        $result = $this->client->index($params);
+        return json($result);
+    }
 `
 
 
