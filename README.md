@@ -214,6 +214,17 @@ php -m
 
 `
 
+    public function __construct()
+    {
+        $params = array(
+            'http://212.64.29.192:9200'
+        );
+
+        $this->client = ClientBuilder::create()->setHosts($params)
+            ->setBasicAuthentication("elastic", "es123456")
+            ->build();
+    }
+
     $hosts = [
                 "192.168.33.10:9200",
             ];
@@ -232,6 +243,30 @@ php -m
             ];
     //        $result = $client->get($params);
             $result = $client->search($params);
+
+`
+- 创建索引
+
+`
+
+    //string $index_name 索引名称
+    public function createIndex($index_name = 'shop_good')
+    {
+        $params = [
+            'index' => $index_name,
+            'body' => [
+                'settings' => [
+                    'number_of_shards' => 1,
+                    'number_of_replicas' => 0
+                ]
+            ],
+        ];
+
+        $result = $this->client->indices()->create($params);
+        return json($result);
+    }
+
+
 
 `
 
