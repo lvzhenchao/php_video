@@ -406,6 +406,69 @@ php -m
     }
 `
 
+- 高亮查询
+
+`
+    
+    /**
+     * 功能描述: 高亮查询文档
+     * @param string $keywords 搜索的内容
+     * @param int $from  从第几页开始
+     * @param int $size  每页取多少文档
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function searchHlMutiDoc($keywords = "", $from = 0, $size = 10, $index_name = "shop_good")
+    {
+        $keywords = '手机';
+        $params = [
+            'index' => $index_name,
+            'body' => [
+                'query' => [
+                    //bool查询，可以把很多小的查询组成一个更为复杂的查询
+                    'bool' => [
+                        // 这里should是查询good_name字段包含$keywords关键词或者good_introduction字段包含$keywords关键词的文档。
+                        //可以改为"must"意思是同时包含。must_not排除包含
+                        'should' => [
+                            [ 'match' => [ 'good_name' => [
+                                'query' => $keywords,
+                                'boost' => 3, // 权重大
+                            ]]],
+                            [ 'match' => [ 'good_introduction' => [
+                                'query' => $keywords,
+                                'boost' => 2,
+                            ]]],
+                        ],
+                    ],
+                ],
+                'highlight' => [
+                    //开始标签，默认是<em>
+                    'pre_tags'=>['<tag1>'],
+                    //结束标签，默认是</em>
+                    'post_tags'=>['</tag1>'],
+                    //高亮的字段
+                    'fields' => [
+                        'good_name' => new \stdClass,
+                        'good_introduction' => new \stdClass,
+                    ]
+                ],
+                'sort' => [
+                    'id' => [
+                        'order' => 'desc'
+                    ]
+                ],
+                'from' => $from,
+                'size' => $size
+            ]
+        ];
+    
+        $results = $this->client->search($params);
+        return json($results);
+    }
+    
+`
+
+
 
 
 
