@@ -467,6 +467,94 @@ php -m
     }
     
 `
+- 更新文档
+
+`
+    
+    /**
+     * 功能描述: 根据ID更新文档
+     * @param int $id  ID（相当于mysql表名中的唯一索引值）
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function updateDoc($id = 1, $index_name = 'shop')
+    {
+        // 可以灵活添加新字段,最好不要乱添加
+        $doc = [
+            'id' => 1,
+            'good_sn' => '4217251852947',
+            'good_name' => '【24期免息 再减600元】Apple/苹果 iPhone 11全网通4G 超广角拍照手机苏宁易购官方store 苹果11 ',
+        ];
+    
+        $params = [
+            'index' => $index_name,
+            'id' => $id,
+            'body' => [
+                'doc' => $doc
+            ]
+        ];
+    
+        $result = $this->client->update($params);
+        return json($result);
+    }
+    
+    更新成功
+    {
+    	"_index": "shop_good",
+    	"_type": "_doc",
+    	"_id": "1",
+    	"_version": 7,
+    	"result": "updated",
+    	"_shards": {
+    		"total": 1,
+    		"successful": 1,
+    		"failed": 0
+    	},
+    	"_seq_no": 6,
+    	"_primary_term": 1
+    }
+
+`
+
+- 删除文档
+
+`
+
+    /**
+     * 功能描述: 删除文档
+     * @param int $id  ID（相当于mysql表名中的唯一索引值）
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function deleteDoc($id = 1, $index_name = 'shop_good')
+    {
+        $params = [
+            'index' => $index_name,
+            'id' => $id
+        ];
+    
+        $result = $this->client->delete($params);
+        return json($result);
+    }
+    
+    删除成功
+    {
+    	"_index": "shop_good",
+    	"_type": "_doc",
+    	"_id": "1",
+    	"_version": 8,
+    	"result": "deleted",
+    	"_shards": {
+    		"total": 1,
+    		"successful": 1,
+    		"failed": 0
+    	},
+    	"_seq_no": 7,
+    	"_primary_term": 1
+    }
+
+
+`
 
 
 
