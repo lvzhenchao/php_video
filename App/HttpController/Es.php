@@ -52,6 +52,7 @@ class Es extends Controller
         $client = ClientBuilder::create()->setHosts($hosts)->build();
         $params = [
             'index' => $index_name,//这里是索引名，相当于数据库名
+            'type' => $index_name,//这里是索引名，相当于数据库名
             'body' => [
 
                 '_source' => [
@@ -111,7 +112,7 @@ class Es extends Controller
 
         $params = [
             'index' => $index_name,
-            'type' => $index_name.'_doc',
+            'type' => $index_name,
             'id' => $doc['id'],
             'body' => $doc
         ];
@@ -152,6 +153,38 @@ class Es extends Controller
         ];
         $client = ClientBuilder::create()->setHosts($hosts)->build();
         $result = $client->get($params);
+        return $this->writeJson(200, "ok", $result);
+    }
+
+    public function searchDoc($keywords = "", $from = 0, $size = 10, $index_name = "shop_good")
+    {
+        $keywords = '手机';
+        $params = [
+            'index' => $index_name,
+            'type' => $index_name,
+            'body' => [
+                'query' => [
+                    //条件查询
+                    'match' => [
+                        'good_name' => [
+                            'query' => "苹果"
+                        ]
+                    ]
+                ],
+                'sort' => [
+                    'id' => [
+                        'order' => 'desc'
+                    ]
+                ],
+                'from' => $from,
+                'size' => $size
+            ]
+        ];
+        $hosts = [
+            "192.168.33.10:9200",
+        ];
+        $client = ClientBuilder::create()->setHosts($hosts)->build();
+        $result = $client->search($params);
         return $this->writeJson(200, "ok", $result);
     }
 
