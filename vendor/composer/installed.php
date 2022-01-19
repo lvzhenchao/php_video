@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fd7b0acb1b4a08bd34a43975e5a161c523c86455',
+        'reference' => '04341317f46244af3ee9c1083f93c817026c2bce',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fd7b0acb1b4a08bd34a43975e5a161c523c86455',
+            'reference' => '04341317f46244af3ee9c1083f93c817026c2bce',
             'dev_requirement' => false,
         ),
         'doctrine/lexer' => array(
