@@ -579,6 +579,28 @@ php -m
 
 `
 
+- 查询映射
+
+`
+
+    /**
+     * 功能描述: 查看映射，就是相当于查看数据库的数据结构
+     * @param string $index_name 索引名称
+     * @return array
+     */
+    public function getMapping($index_name = 'shop_good')
+    {
+        $params = [
+            'index' => $index_name,
+             'include_type_name' => true
+        ];
+        $result = $this->client->indices()->getMapping($params);
+        return json($result);
+    }
+    
+
+`
+
 
 
 
