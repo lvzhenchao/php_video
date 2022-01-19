@@ -4,6 +4,7 @@ namespace App\HttpController;
 
 use App\Lib\AliyunSdk\AliVod;
 use App\Lib\AliyunSdk2\AliVod2;
+use EasySwoole\Core\Component\Di;
 use EasySwoole\Core\Http\AbstractInterface\Controller;
 use Elasticsearch\ClientBuilder;
 
@@ -29,6 +30,32 @@ class Index extends Controller
             ],
         ];
 //        $result = $client->get($params);
+        $result = $client->search($params);
+
+
+        return $this->writeJson(200, "ok", $result);
+
+//        $this->response()->write('I am index');
+    }
+
+    function index_single()
+    {
+
+
+        $params = [
+            "index" => "imooc_video",
+            "type"  => "video",
+//            "id"    => 1,
+            "body" => [
+                'query' => [
+                    'match' => [
+                        'name' => '刘德华'
+                    ],
+                ],
+            ],
+        ];
+
+        $client = Di::getInstance()->get("ES");
         $result = $client->search($params);
 
 

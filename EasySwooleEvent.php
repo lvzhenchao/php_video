@@ -9,6 +9,7 @@
 namespace EasySwoole;
 
 use App\lib\Redis\Redis;
+use App\Model\Es\EsClient;
 use \EasySwoole\Core\AbstractInterface\EventInterface;
 use EasySwoole\Core\Swoole\Process\ProcessManager;
 use \EasySwoole\Core\Swoole\ServerManager;
@@ -57,6 +58,9 @@ Class EasySwooleEvent implements EventInterface {
 
         //将redis注入
         Di::getInstance()->set('REDIS', Redis::getInstance());
+
+
+        Di::getInstance()->set('ES', EsClient::getInstance());
 
         //将生产者模型加入到新的进程内，并注入
         $allNum = 3;
