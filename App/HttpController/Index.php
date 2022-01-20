@@ -2,13 +2,15 @@
 
 namespace App\HttpController;
 
+use App\HttpController\Api\Base;
 use App\Lib\AliyunSdk\AliVod;
 use App\Lib\AliyunSdk2\AliVod2;
+use App\Model\Es\EsVideo;
 use EasySwoole\Core\Component\Di;
 use EasySwoole\Core\Http\AbstractInterface\Controller;
 use Elasticsearch\ClientBuilder;
 
-class Index extends Controller
+class Index extends Base
 {
     function index()
     {
@@ -61,7 +63,16 @@ class Index extends Controller
 
         return $this->writeJson(200, "ok", $result);
 
-//        $this->response()->write('I am index');
+    }
+
+    function index_demo()
+    {
+
+        $name = $this->params['name'];
+        $model = new EsVideo();
+        $result = $model->searchByName($name);
+        return $this->writeJson(200, "ok", $result);
+
     }
 
     /**
