@@ -600,6 +600,12 @@ php -m
     
 
 `
+# es布尔查询进行多条件查询[https://www.jianshu.com/p/1e970765198c]
+- must	    查询的结果必须匹配查询条件，并计算score
+- filter	查询的结果必须匹配查询条件，和must不同不会计算score
+- should	查询结果必须符合查询条件中的一个或多个
+- must_not	查询结果必须不符合查询条件
+
 
 
 
