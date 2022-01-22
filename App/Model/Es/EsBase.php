@@ -12,7 +12,7 @@ class EsBase {
         $this->esClient = Di::getInstance()->get("ES");
     }
 
-    public function searchByName($name, $search_type = "match") {
+    public function searchByName($name,$from = 0, $size = 10, $search_type = "match") {
         $name = trim($name);
         if (empty($name)) {
             return [];
@@ -27,6 +27,8 @@ class EsBase {
                         'name' => $name
                     ],
                 ],
+                'from' => $from,
+                'size' => $size,
             ],
         ];
 
