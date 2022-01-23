@@ -606,6 +606,12 @@ php -m
 - should	查询结果必须符合查询条件中的一个或多个
 - must_not	查询结果必须不符合查询条件
 
+# es高亮查询
+- fragment_size ：指定高亮数据展示多少个字符回来；
+- pre_tag：指定前缀标签，如 <font color="red">
+- post_tags：指定后缀标签，如 </font>
+- field：指定那个字段为高亮字段
+
 
 
 
