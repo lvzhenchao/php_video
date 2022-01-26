@@ -614,6 +614,10 @@ php -m
 
 # OpenResty一个基于Nginx和Lua的高性能Web平台，基于 NGINX 的可伸缩的 Web 平台
 
+# 百度地图封装[https://lbsyun.baidu.com/]
+- Web服务API[https://lbsyun.baidu.com/index.php?title=webapi]
+- 地理编码【国内】[https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding]
+
 
 
 
