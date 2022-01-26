@@ -618,6 +618,9 @@ php -m
 - Web服务API[https://lbsyun.baidu.com/index.php?title=webapi]
 - 地理编码【国内】[https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding]
 
+# 百度静态图API [https://lbsyun.baidu.com/index.php?title=static]
+
+
 
 
 
