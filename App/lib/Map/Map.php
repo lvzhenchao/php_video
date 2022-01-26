@@ -44,6 +44,21 @@ class Map{
         return $responseText;
     }
 
+    //获取静态图
+    public function staticImage($center) {
+        $data = [
+            'center' => $center,
+            'markers' => $center,
+            'ak' => 'TCGoME0gIHZ2xZjHcaGUEfI0A7Hb4qun',
+            'width' => '400',
+            'height' => '300',
+        ];
+        $url = 'https://api.map.baidu.com/?' .http_build_query($data);
+
+        $res = self::DoCurl($url);
+
+//        <img style="margin:20px" width="280" height="140" src="<?=$res?>"/>
+    }
 
 
 }
