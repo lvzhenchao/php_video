@@ -57,7 +57,7 @@ class Map{
 
         $res = self::DoCurl($url);
 
-//        <img style="margin:20px" width="280" height="140" src="<?=$res?>"/>
+//        <img style="margin:20px" width="280" height="140" src="<?=$res ? >"/>
     }
 
 
