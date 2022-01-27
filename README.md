@@ -621,6 +621,15 @@ php -m
 # 百度静态图API [https://lbsyun.baidu.com/index.php?title=static]
 
 
+# 微信下单支付流程
+- 1、详情页抢购
+- 2、订单确认页
+- 3、订单入库：订单表：id、订单编号、微信支付订单编号、用户id、用户姓名、支付时间、支付方式、商品ID、商品下单数量、支付状态、总价、微信支付返回的总额、订单来源
+- 4、生成支付二维码：注意微信扫码支付的两种模式
+- 5、微信支付
+- 6、异步通知【获取流式信息:一个大的数据包】[file_put_contents('/tmp/txt', file_get_contents("php://input"), FILE_APPEND)]
+    
+
 
 
 
